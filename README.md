@@ -1,13 +1,16 @@
 # 🕵️‍♀️ Healthcare Fraud Detection Using Graph Analysis and AI 🤖
 
 > **🎯 Purpose:**  
-> This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
+> This repository contains my project for the UCD Professional Academy - Machine Learning Certificate course curriculam. We developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
 
 > **🎯 Solution Goal:**  
-> The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
+> The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems in Ireland.
 
 > **🚦 Solution Scope:**  
 > This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
+
+> **📊 DataSet Use:**
+> Since there is no readily available dataset that could support the real-world dataset of healthcare systems in ireland, I have used Synthea Patient Generator - International version to generate datasets specific to few demographics in ireland such as Galway, Dublin and Limerick as cities with list of Patients, Providers, Claims, Claims_Transactions etc. 
 
 > **📊 Summary of results**  
 > The results conclude the following can be identified during normal claims processing and can be integrated into business operations for further action:  
@@ -114,7 +117,7 @@ The repository includes three main notebooks:
 ├── data/
 │   └── sample_data/
 │       └── csv/
-│           └── [county folders]
+│           └── [county specific folders]
 ├── containers/
 │   ├── Dockerfile
 │   └── other configs
@@ -124,7 +127,7 @@ The repository includes three main notebooks:
 ```
 
 ### 📊 Datasets
-This project utilizes a **synthetic healthcare dataset** generated through the **Synthea** tool. Synthea is an open-source simulator designed to produce realistic, anonymized patient records based on population models. This approach enables scalable and privacy-preserving research and analysis.
+This project utilizes a **synthetic healthcare dataset** generated through the **Synthea** tool. Synthea is an open-source simulator designed to produce realistic, anonymized patient records based on population models. This approach enables scalable and privacy-preserving research and analysis. Synthea generates wide set of datasets specific to whole heatlhcare domain context out of which we are only using claims.csv, claim_transactions.csv, providers.csv, patients.csv etc, rest of the files are moved from the github repository to avoid excessive storage billing. 
 
 > **INFO:**  
 > Due to limited and insufficient data available from HSE and broader European sources, we opted to use synthetic data generated via Synthea. This allows us to create a comprehensive, realistic dataset that includes diverse patient profiles, claims, and healthcare scenarios necessary for effective fraud detection analysis. Using synthetic data ensures data privacy, enables scalable testing, and provides the detailed information required to develop and validate robust fraud detection models in a controlled environment.
@@ -191,8 +194,8 @@ pip install pandas numpy matplotlib seaborn plotly scikit-learn
 
 ### Clone the repo 🛰️
 ```bash
-git clone https://github.com/HackmaniaGX/neural-nexus-healthcare-fwa-analysis.git
-cd neural-nexus-healthcare-fwa-analysis
+git clone https://github.com/nithinmohantk/ucdpa-ml-capstone-project-healthcare-fraud-detection-ireland.git
+cd ucdpa-ml-capstone-project-healthcare-fraud-detection-ireland
 ```
 
 ### Large Files and Git LFS 📦
@@ -215,8 +218,8 @@ git lfs pull
 #### Using Docker 🐳
 To build and run the container:
 ```bash
-docker build -t healthcare-fwa .
-docker run -p 8888:8888 -v "$(pwd):/app" healthcare-fwa
+docker build -t irl-healthcare-fwa .
+docker run -p 8888:8888 -v "$(pwd):/app" irl-healthcare-fwa
 ```
 
 This will start Jupyter Notebook server accessible at http://localhost:8888.
@@ -470,12 +473,11 @@ Please note that some content in this repository, including explanations, summar
 - Nithin Mohan T K- [@nithinmohantk](https://github.com/nithinmohantk)
 - Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by <i>Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
 Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center</i>
-- Contributions from Neural Nexus Team - [David Mullins](https://www.linkedin.com/in/david-mullins-93a624126/), [Anna Coyle](https://www.linkedin.com/in/coyleanna/), [Dovile Janusauskaite](https://www.linkedin.com/in/dovile-janusauskaite-13335b13/) & [Nithin Mohan](https://in.linkedin.com/in/nithinmohantk) 
 
 ## 📜 License
-This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-**© Neural Nexus Team** - All rights reserved.
+**© Nithin Mohan T K** - feel free to contribute and share.
 
 > With love for healthcare data analysis and fraud detection.
 
