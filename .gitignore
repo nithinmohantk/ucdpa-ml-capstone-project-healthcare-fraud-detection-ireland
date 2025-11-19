@@ -172,3 +172,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+docs/UCD_ML_Certificate_Project_Report.pdf

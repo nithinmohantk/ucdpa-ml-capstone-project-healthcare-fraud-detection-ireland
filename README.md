@@ -1,7 +1,7 @@
 # 🕵️‍♀️ Healthcare Fraud Detection Using Graph Analysis and AI 🤖
 
 > **🎯 Purpose:**  
-> This repository contains my project for the UCD Professional Academy - Machine Learning Certificate course curriculam. We developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
+> This repository contains my project for the UCD Professional Academy - Data Analytics: Machine Learning Certificate course curriculam. We developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
 
 > **🎯 Solution Goal:**  
 > The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems in Ireland.
@@ -102,10 +102,11 @@ Effective fraud detection helps prevent financial losses, addresses inefficienci
 
 ### 📚 The Notebooks
 
-The repository includes three main notebooks:  
+The repository includes four main notebooks:  
 - `healthcare_fwa_analysis.ipynb` — General FWA analysis with visualizations.  
 - `healthcare_fwa_graph_analysis.ipynb` — Graph-based ML approach inspired by research papers.  
 - `healthcare_fwa_opt2_analysis.ipynb` — Machine learning to detect suspicious claims.
+- **`healthcare_fwa_consolidated_final.ipynb`** — ⭐ **RECOMMENDED** - Comprehensive consolidated notebook combining all methods with extensive documentation, EDA, feature engineering, Isolation Forest, Random Forest, and graph-based network analysis (ready for UCD ML Certificate project submission).
 
 ### 🗂️ Directory Structure
 ```plaintext
@@ -138,6 +139,72 @@ This project utilizes a **synthetic healthcare dataset** generated through the *
 - **Controlled Environment:** Facilitates testing, experimentation, and validation without risking sensitive information.
 - **Resource Efficiency:** Eliminates the need for complex data access procedures and compliance hurdles.
 - **Customizability:** Data can be tailored to specific scenarios, demographic distributions, or rare conditions, enhancing research flexibility.
+
+#### How to Generate Synthea Data for Ireland
+
+**Prerequisites:**
+- Java 11+ installed
+- Git for repository cloning
+- 4GB+ RAM recommended
+
+**Step-by-Step Generation Process:**
+
+1. **Clone Synthea repositories:**
+   ```bash
+   # Clone main Synthea generator
+   git clone https://github.com/synthetichealth/synthea.git
+   cd synthea
+   
+   # Clone Synthea International for Irish configurations
+   git clone https://github.com/synthetichealth/synthea-international.git
+   ```
+
+2. **Apply Irish-specific configurations:**
+   ```bash
+   # Copy Ireland configurations to main Synthea
+   cd synthea-international
+   cp -R ie/* ../synthea/
+   cd ../synthea
+   ```
+
+3. **Generate patient data for each region:**
+   ```bash
+   # Generate 1,000 patients for Dublin (output to separate folder)
+   ./run_synthea -p 1000 "County Dublin" Dublin --exporter.baseDirectory="./output_dublin/"
+   
+   # Generate 1,000 patients for Galway (output to separate folder)
+   ./run_synthea -p 1000 "County Galway" Clifden --exporter.baseDirectory="./output_galway/"
+   
+   # Generate 1,000 patients for Limerick (output to separate folder)
+   ./run_synthea -p 1000 "County Limerick" Limerick --exporter.baseDirectory="./output_limerick/"
+   ```
+   
+   **Note:** The command format is `./run_synthea -p <population> "<State/County>" <City>`. The `--exporter.baseDirectory` parameter directs output to region-specific folders, preventing data from being overwritten between runs.
+   
+   > **⚠️ Important - Synthea International Limitation:**  
+   > The Synthea International version requires specifying both a county AND a city when generating data (e.g., `"County Galway" Clifden`). Unlike the US version of Synthea, which can generate data for an entire county with all its cities automatically, the International version generates data only for the specific city provided. This means each generation is limited to a single city location rather than county-wide diversity. To simulate county-wide data, multiple runs with different cities within the same county would be required.
+
+4. **Organize generated data:**
+   ```bash
+   # Create region-specific directories in your project
+   mkdir -p data/sample_data/csv/{dublin,galway,limerick,common}
+   
+   # Copy generated files to respective regional folders
+   cp output_dublin/csv/* data/sample_data/csv/dublin/
+   cp output_galway/csv/* data/sample_data/csv/galway/
+   cp output_limerick/csv/* data/sample_data/csv/limerick/
+   ```
+
+5. **Verify data generation:**
+   ```bash
+   # Check record counts
+   wc -l data/sample_data/csv/*/patients.csv
+   wc -l data/sample_data/csv/*/claims.csv
+   ```
+
+**Custom Fork Used:**
+- Repository: https://github.com/nithinmohantk/synthea/tree/synthea/ireland-version-test
+- This fork includes additional Irish-specific customizations and test configurations
 
 The datasets used include:
 
@@ -244,6 +311,8 @@ jupyter notebook
 - Graph-Based ML Analysis: `healthcare_fwa_graph_analysis.ipynb`
 
 - ML-based Detection Algorithm: `healthcare_fwa_opt2_analysis.ipynb`
+- 
+- Combined Captone Project Final : `healthcare_fwa_consolidated_final.ipynb`
 
 > **Note**
 Update dataset paths if necessary to point to your local data folders.

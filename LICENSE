@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Nithin Mohan T K
+Copyright (c) 2025 Nithin Mohan Thattiot Kadumberi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,98 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Attribution and Acknowledgments
+
+This project builds upon and is inspired by the following works:
+
+### Primary Research Inspiration
+**"Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data"**
+- Authors: Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar, Leilani Gilpin, John Guerra-Gomez, and Daniel Davies
+- Institution: Palo Alto Research Center (PARC)
+- Publication: AI Magazine, AAAI
+- URL: https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554
+- Note: Graph-based fraud detection methodology and network analysis techniques adapted from this research
+
+### Data Generation Tools
+**Synthea™ Patient Generator**
+- Project: Synthea - Synthetic Patient Population Simulator
+- Repository: https://github.com/synthetichealth/synthea
+- License: Apache License 2.0
+- Usage: All synthetic healthcare data in this project generated using Synthea
+
+**Synthea International**
+- Project: International configurations for Synthea
+- Repository: https://github.com/synthetichealth/synthea-international
+- License: Apache License 2.0
+- Usage: Ireland-specific healthcare configurations (IE module)
+
+### Educational Context
+- **Institution:** UCD Professional Academy
+- **Program:** Data Analytics: Machine Learning Certificate (Batch: 25/09/2025)
+- **Lecturer:** Sajal Minhas
+- **Purpose:** Capstone project for ML certificate program
+
+### Third-Party Libraries
+This project uses the following open-source libraries (see requirements.txt):
+- scikit-learn (BSD-3-Clause)
+- pandas (BSD-3-Clause)
+- NumPy (BSD-3-Clause)
+- Matplotlib (PSF License)
+- Seaborn (BSD-3-Clause)
+- NetworkX (BSD-3-Clause)
+- Plotly (MIT License)
+
+---
+
+## Citation
+
+If you use this code or methodology in your research or project, please cite:
+
+```bibtex
+@software{mohan2025healthcare_fraud_detection,
+  author = {Mohan, Nithin Thattiot Kadumberi},
+  title = {Healthcare Fraud Detection Using Graph Analysis and Machine Learning},
+  year = {2025},
+  publisher = {GitHub},
+  url = {https://github.com/nithinmohantk/ucdpa-ml-capstone-project-healthcare-fraud-detection-ireland}
+}
+```
+
+And please also cite the original research paper:
+
+```bibtex
+@article{liu2017graph,
+  title={Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data},
+  author={Liu, Juan and Bier, Eric and Wilson, Aaron and Honda, Tomo and Kumar, Sricharan and Gilpin, Leilani and Guerra-Gomez, John and Davies, Daniel},
+  journal={AI Magazine},
+  volume={38},
+  number={4},
+  pages={63--76},
+  year={2017},
+  publisher={AAAI}
+}
+```
+
+---
+
+## Usage Guidelines
+
+While this project is released under the MIT License, users are encouraged to:
+
+1. **Acknowledge the work:** Provide attribution when using or adapting this code
+2. **Cite the research:** Reference the original PARC research paper that inspired the methodology
+3. **Educational use:** This project was developed for educational purposes; validate and adapt for production use
+4. **Synthetic data notice:** Be aware that all data used is synthetic (Synthea-generated) and may not reflect real-world fraud patterns
+5. **Responsible AI:** Ensure any fraud detection system built from this work includes human oversight and fairness audits
+
+---
+
+## Contact
+
+**Nithin Mohan Thattiot Kadumberi**
+- GitHub: [@nithinmohantk](https://github.com/nithinmohantk)
+- Project: Healthcare Fraud Detection Ireland
+- Year: 2025
