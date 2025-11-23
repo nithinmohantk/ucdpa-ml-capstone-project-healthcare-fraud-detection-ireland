@@ -174,3 +174,5 @@ cython_debug/
 .pypirc
 
 docs/UCD_ML_Certificate_Project_Report.pdf
+
+scripts/

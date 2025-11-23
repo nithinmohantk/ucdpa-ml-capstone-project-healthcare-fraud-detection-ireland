@@ -11,3 +11,4 @@ beautifulsoup4
 pandoc
 nbconvert
 PyPDF2
+xelatex
